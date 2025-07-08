@@ -9,6 +9,8 @@
 // @match       *://chat.meta.stackexchange.com/rooms/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=stackexchange.com
 // @grant        none
+// @updateURL   https://github.com/themoonisacheese/userscripts/raw/main/spoilers.user.js
+// @downloadURL https://github.com/themoonisacheese/userscripts/raw/main/spoilers.user.js
 // ==/UserScript==
 
 (function() {
@@ -26,7 +28,7 @@
                 if (input) {
                     const original = input.value;
                     if (original == '') return; // Do nothing if input is empty
-                    input.value = encode('!spoiler! [userscript](https://example.com) ', original);
+                    input.value = encode('!spoiler! [userscript](https://github.com/themoonisacheese/userscripts/raw/main/spoilers.user.js) ', original);
                     document.getElementById("sayit-button").click();
                 }
             });
