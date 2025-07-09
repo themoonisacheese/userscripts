@@ -129,7 +129,7 @@
         for (const char of chars) {
             const byte = fromVariationSelector(char.codePointAt(0))
 
-                                               if (byte === null && decoded.length > 0) {
+            if (byte === null && decoded.length > 0) {
                 break
             } else if (byte === null) {
                 continue
@@ -143,11 +143,6 @@
     }
 
 
-    document.addEventListener('readystatechange', function() {
-        if (document.readyState === 'complete') {
-            if (window.CHAT && CHAT.Hub && CHAT.Hub.roomReady && typeof CHAT.Hub.roomReady.add === 'function') {
-                CHAT.Hub.roomReady.add(init);
-            }
-        }
-    });
+    CHAT.Hub.roomReady.add(init);
+
 })();
